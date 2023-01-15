@@ -53,8 +53,28 @@ namespace SEPIEM
  }
 
             preencherTabelaInscritos();
+
+           totalInscritos();
+          
         }
 
+      
+
+        private void totalInscritos()
+        {
+            try
+            {
+                int totalInscritos = int.Parse(dataGridView1.Rows.Count.ToString())-1;
+                lblTotalInscritos.Text = totalInscritos.ToString();
+
+                
+
+            }
+            catch (Exception e)
+            {
+                this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
+            }
+        }
 
         private async void preencherTabelaInscritos()
         {
@@ -65,13 +85,13 @@ namespace SEPIEM
                 Dictionary<string, Inscritos> data = JsonConvert.DeserializeObject<Dictionary<string, Inscritos>>(res1.Body.ToString());
 
                 conteudoTabela(data);
-
                 
+                              
 
             }
             catch(Exception e)
             {
-                MessageBox.Show(e.ToString());
+               MessageBox.Show(e.ToString());
                 this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
             }
 
@@ -294,6 +314,8 @@ namespace SEPIEM
                         cmbProvincia.Text = inscritos.provincia;
                         txtLinkDoc.Text = inscritos.urlDocumentos;
 
+                       
+
                     }
                     catch (Exception ex)
                     {
@@ -340,6 +362,8 @@ namespace SEPIEM
                 try
                 {
                     var set = client.Update("Inscritos/" + txtProcurarIns.Text, inscritos);
+                    
+
                     // MessageBox.Show("Dados Inseridos com Sucesso !!!");
                     this.Alert("ÊXito na Actualização", formAlert.enmType.Sucess);
 
@@ -354,6 +378,9 @@ namespace SEPIEM
 
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
+               // FirebaseResponse res1 = client.Get(@"contInscritos");
+           // int qtdInscritos = int.Parse(res1.ResultAs<string>());
+
             if (txtProcurarIns.Text == "" || txtProcurarIns.Text == "Informe o BI")
             {
                 this.Alert("Informe o Curso, Por favor !!!", formAlert.enmType.Warnig);
@@ -365,17 +392,35 @@ namespace SEPIEM
                 {
                     var res = client.Delete("Inscritos/" + txtProcurarIns.Text);
 
+                   // var set1 = client.Set(@"contInscritos", --qtdInscritos);
+
                     this.Alert("Inscrito Excluído com Êxito", formAlert.enmType.Sucess);
 
                     preencherTabelaInscritos();
+                    totalInscritos();
+                    limparCampos();
 
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(""+ex);
                     this.Alert("Algo Correu Mal...\n ou Verifique a ligação à internet", formAlert.enmType.Error);
                 }
 
             }
+        }
+
+        private void limparCampos()
+        {
+            txtNomeProprio.Clear();
+            txtApelido1.Clear();
+            txtApelido2.Clear();
+            txtBI.Clear();
+            txtNaturalidade.Clear();
+            txtResidencia.Clear();
+            txtCurso.Clear();
+            txtEscola.Clear();
+            txtLinkDoc.Clear();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -412,6 +457,10 @@ namespace SEPIEM
             {
                 this.Alert("Algo Correu Mal...\n ou Verifique a ligação à internet", formAlert.enmType.Error);
             }
+        }
+
+        private void lblTotalInscritos_Click(object sender, EventArgs e)
+        {
         }
     }
 }

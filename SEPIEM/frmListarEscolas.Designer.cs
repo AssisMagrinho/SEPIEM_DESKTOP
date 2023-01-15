@@ -42,6 +42,8 @@
             this.txtProcurarEscola = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblTotalEscolas = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -93,6 +95,8 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
+            this.panel6.Controls.Add(this.lblTotalEscolas);
+            this.panel6.Controls.Add(this.lblTitle);
             this.panel6.Controls.Add(this.tableLayoutPanel4);
             this.panel6.Controls.Add(this.tableLayoutPanel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -212,6 +216,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(1412, 497);
             this.dataGridView1.TabIndex = 1;
             // 
+            // lblTotalEscolas
+            // 
+            this.lblTotalEscolas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalEscolas.AutoSize = true;
+            this.lblTotalEscolas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalEscolas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTotalEscolas.Location = new System.Drawing.Point(1280, 9);
+            this.lblTotalEscolas.Name = "lblTotalEscolas";
+            this.lblTotalEscolas.Size = new System.Drawing.Size(93, 37);
+            this.lblTotalEscolas.TabIndex = 17;
+            this.lblTotalEscolas.Text = "####";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitle.Location = new System.Drawing.Point(1170, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(104, 37);
+            this.lblTitle.TabIndex = 16;
+            this.lblTitle.Text = "Total:";
+            // 
             // frmListarEscolas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -227,6 +255,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -247,5 +276,7 @@
         private System.Windows.Forms.TextBox txtProcurarEscola;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblTotalEscolas;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

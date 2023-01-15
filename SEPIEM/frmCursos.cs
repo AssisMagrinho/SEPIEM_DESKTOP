@@ -42,7 +42,9 @@ namespace SEPIEM
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-
+            FirebaseResponse res = client.Get(@"ContCursos");
+            int qtdCursos = int.Parse(res.ResultAs<string>());
+            
             if (txtDesignacaoCurso.Text == "Designação" || txtDesignacaoCurso.Text == "" ||
                 txtEscola.Text == "Escola" || txtEscola.Text == "")
             {
@@ -64,6 +66,10 @@ namespace SEPIEM
                 {
                     var set = client.Set("Cursos/" + ID_Curso, curso);
                     // MessageBox.Show("Dados Inseridos com Sucesso !!!");
+
+                    var set1 = client.Set(@"ContCursos", ++qtdCursos);
+
+
                     this.Alert("ÊXito no Cadastro", formAlert.enmType.Sucess);
 
                     preencherTabelaEscola();
@@ -91,6 +97,28 @@ namespace SEPIEM
 
 
             preencherTabelaEscola();
+            totalCursos();
+
+        }
+
+        private void totalCursos()
+        {
+            try
+            {
+                //   FirebaseResponse res1 = client.Get(@"ContCursos");
+                //  int qtdCursos = int.Parse(res1.ResultAs<string>());
+                //  lblTotalCursos.Text = qtdCursos.ToString();
+
+                int totalInscritos = int.Parse(dataGridView1.Rows.Count.ToString());
+                lblTotalCursos.Text = totalInscritos.ToString();
+
+
+
+            }
+            catch (Exception e)
+            {
+                this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
+            }
 
         }
 
@@ -107,9 +135,9 @@ namespace SEPIEM
             }
             catch(Exception e)
             {
-                this.Alert("Algo Correu Mal...\n ou Verifique a ligação à internet\n"+e, formAlert.enmType.Error);
+                this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
             }
-          
+
         }
 
       void conteudoTabela(Dictionary<string, Cursos> record)
@@ -303,7 +331,10 @@ namespace SEPIEM
 
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
-             if (txtPesquisarCurso.Text == "Pesquisar Curso [nomeCurso_nomeEscola]" || txtPesquisarCurso.Text == "")
+            FirebaseResponse res = client.Get(@"ContCursos");
+            int qtdCursos = int.Parse(res.ResultAs<string>());
+
+            if (txtPesquisarCurso.Text == "Pesquisar Curso [nomeCurso_nomeEscola]" || txtPesquisarCurso.Text == "")
             {
                 this.Alert("Informe o Curso, Por favor !!!", formAlert.enmType.Warnig);
             }
@@ -312,11 +343,13 @@ namespace SEPIEM
 
                 try
                 {
-                    var res = client.Delete("Cursos/" + txtPesquisarCurso.Text);
+                    var res1 = client.Delete("Cursos/" + txtPesquisarCurso.Text);
+                    var set1 = client.Set(@"ContCursos", --qtdCursos);
 
                     this.Alert("Curso Excluído com Êxito", formAlert.enmType.Sucess);
 
                     preencherTabelaEscola();
+                    totalCursos();
 
                 }
                 catch (Exception ex)

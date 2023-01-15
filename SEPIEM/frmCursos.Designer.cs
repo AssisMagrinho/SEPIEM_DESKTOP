@@ -44,6 +44,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblTotalCursos = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnProcurarEscola = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -81,7 +83,7 @@
             this.panel3.ForeColor = System.Drawing.SystemColors.Control;
             this.panel3.Location = new System.Drawing.Point(0, 154);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1418, 515);
+            this.panel3.Size = new System.Drawing.Size(1441, 539);
             this.panel3.TabIndex = 7;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -91,7 +93,7 @@
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel10.Controls.Add(this.txtEscola, 0, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(784, 390);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(768, 377);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 3;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -121,7 +123,7 @@
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel9.Controls.Add(this.txtDesignacaoCurso, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(93, 390);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(77, 377);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -155,9 +157,9 @@
             this.panel5.Controls.Add(this.btnCadastrarCurso);
             this.panel5.Controls.Add(this.btnClose);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 455);
+            this.panel5.Location = new System.Drawing.Point(0, 479);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1418, 60);
+            this.panel5.Size = new System.Drawing.Size(1441, 60);
             this.panel5.TabIndex = 6;
             // 
             // button2
@@ -169,7 +171,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Image = global::SEPIEM.Properties.Resources.list_32px;
-            this.button2.Location = new System.Drawing.Point(868, 0);
+            this.button2.Location = new System.Drawing.Point(879, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(65, 45);
             this.button2.TabIndex = 16;
@@ -209,7 +211,7 @@
             this.btnMaximizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnMaximizar.Image = global::SEPIEM.Properties.Resources.RemoveUsu00;
-            this.btnMaximizar.Location = new System.Drawing.Point(681, 3);
+            this.btnMaximizar.Location = new System.Drawing.Point(692, 3);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(65, 45);
             this.btnMaximizar.TabIndex = 14;
@@ -225,7 +227,7 @@
             this.btnCadastrarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCadastrarCurso.Image = global::SEPIEM.Properties.Resources.addUsu;
-            this.btnCadastrarCurso.Location = new System.Drawing.Point(587, 3);
+            this.btnCadastrarCurso.Location = new System.Drawing.Point(598, 3);
             this.btnCadastrarCurso.Name = "btnCadastrarCurso";
             this.btnCadastrarCurso.Size = new System.Drawing.Size(65, 45);
             this.btnCadastrarCurso.TabIndex = 15;
@@ -241,7 +243,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnClose.Image = global::SEPIEM.Properties.Resources.updateUsu;
-            this.btnClose.Location = new System.Drawing.Point(776, 0);
+            this.btnClose.Location = new System.Drawing.Point(787, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(65, 45);
             this.btnClose.TabIndex = 13;
@@ -261,7 +263,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1415, 359);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1438, 362);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // dataGridView1
@@ -287,10 +289,34 @@
             this.dataGridView1.MinimumSize = new System.Drawing.Size(1412, 350);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1412, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(1432, 350);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // lblTotalCursos
+            // 
+            this.lblTotalCursos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalCursos.AutoSize = true;
+            this.lblTotalCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCursos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTotalCursos.Location = new System.Drawing.Point(1226, 14);
+            this.lblTotalCursos.Name = "lblTotalCursos";
+            this.lblTotalCursos.Size = new System.Drawing.Size(93, 37);
+            this.lblTotalCursos.TabIndex = 12;
+            this.lblTotalCursos.Text = "####";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitle.Location = new System.Drawing.Point(1116, 14);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(104, 37);
+            this.lblTitle.TabIndex = 11;
+            this.lblTitle.Text = "Total:";
             // 
             // panel1
             // 
@@ -302,7 +328,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1418, 154);
+            this.panel1.Size = new System.Drawing.Size(1441, 154);
             this.panel1.TabIndex = 6;
             // 
             // btnProcurarEscola
@@ -315,7 +341,7 @@
             this.btnProcurarEscola.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
             this.btnProcurarEscola.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurarEscola.Image = ((System.Drawing.Image)(resources.GetObject("btnProcurarEscola.Image")));
-            this.btnProcurarEscola.Location = new System.Drawing.Point(301, 89);
+            this.btnProcurarEscola.Location = new System.Drawing.Point(312, 89);
             this.btnProcurarEscola.Name = "btnProcurarEscola";
             this.btnProcurarEscola.Size = new System.Drawing.Size(55, 42);
             this.btnProcurarEscola.TabIndex = 0;
@@ -332,13 +358,15 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1418, 56);
+            this.panel2.Size = new System.Drawing.Size(1441, 56);
             this.panel2.TabIndex = 5;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
+            this.panel6.Controls.Add(this.lblTotalCursos);
             this.panel6.Controls.Add(this.btnPesquisarCurso);
+            this.panel6.Controls.Add(this.lblTitle);
             this.panel6.Controls.Add(this.tableLayoutPanel4);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.tableLayoutPanel7);
@@ -346,7 +374,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1418, 56);
+            this.panel6.Size = new System.Drawing.Size(1441, 56);
             this.panel6.TabIndex = 14;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
@@ -360,7 +388,7 @@
             this.btnPesquisarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
             this.btnPesquisarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisarCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisarCurso.Image")));
-            this.btnPesquisarCurso.Location = new System.Drawing.Point(40, 12);
+            this.btnPesquisarCurso.Location = new System.Drawing.Point(51, 12);
             this.btnPesquisarCurso.Name = "btnPesquisarCurso";
             this.btnPesquisarCurso.Size = new System.Drawing.Size(46, 42);
             this.btnPesquisarCurso.TabIndex = 19;
@@ -384,7 +412,7 @@
             // 
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(103, 53);
+            this.panel7.Location = new System.Drawing.Point(114, 53);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(580, 1);
             this.panel7.TabIndex = 21;
@@ -408,7 +436,7 @@
             this.txtPesquisarCurso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPesquisarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesquisarCurso.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtPesquisarCurso.Location = new System.Drawing.Point(105, 13);
+            this.txtPesquisarCurso.Location = new System.Drawing.Point(116, 13);
             this.txtPesquisarCurso.Multiline = true;
             this.txtPesquisarCurso.Name = "txtPesquisarCurso";
             this.txtPesquisarCurso.Size = new System.Drawing.Size(578, 35);
@@ -445,7 +473,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(362, 129);
+            this.panel4.Location = new System.Drawing.Point(373, 129);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(651, 1);
             this.panel4.TabIndex = 12;
@@ -458,7 +486,7 @@
             this.txtProcurarEscola.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtProcurarEscola.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProcurarEscola.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtProcurarEscola.Location = new System.Drawing.Point(364, 89);
+            this.txtProcurarEscola.Location = new System.Drawing.Point(375, 89);
             this.txtProcurarEscola.Multiline = true;
             this.txtProcurarEscola.Name = "txtProcurarEscola";
             this.txtProcurarEscola.Size = new System.Drawing.Size(649, 35);
@@ -485,7 +513,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(1418, 669);
+            this.ClientSize = new System.Drawing.Size(1441, 693);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "frmCursos";
@@ -539,5 +567,7 @@
         private System.Windows.Forms.Button btnPesquisarCurso;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtPesquisarCurso;
+        private System.Windows.Forms.Label lblTotalCursos;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

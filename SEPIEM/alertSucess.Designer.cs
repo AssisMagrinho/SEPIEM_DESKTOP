@@ -67,7 +67,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCancelar.Image = global::SEPIEM.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(452, 17);
+            this.btnCancelar.Location = new System.Drawing.Point(540, 18);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(55, 44);
             this.btnCancelar.TabIndex = 1;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(519, 80);
+            this.ClientSize = new System.Drawing.Size(607, 80);
             this.Controls.Add(this.PbImgAlert);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblMsg);

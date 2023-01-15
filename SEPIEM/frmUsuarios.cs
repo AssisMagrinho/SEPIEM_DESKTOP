@@ -49,9 +49,33 @@ namespace SEPIEM
 
                 this.Alert("Sem Ligado à Internet ", formAlert.enmType.NotConnected);
             }
+
+           
             LoadTheme();
             preencherTabelaUsuarios();
 
+            totalUsuarios();
+
+
+        }
+
+        private void totalUsuarios()
+        {
+            try
+            {
+               // FirebaseResponse res1 = client.Get(@"contUsuarios");
+                 //int qtdUsuarios = int.Parse(res1.ResultAs<string>());
+
+                 //lblTotalUsuarios.Text = qtdUsuarios.ToString();
+
+                int totalUsuarios = int.Parse(dataGridView1.Rows.Count.ToString())-1;
+                 lblTotalUsuarios.Text = totalUsuarios.ToString();
+
+            }
+            catch (Exception e)
+            {
+                this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
+            }
 
         }
 
@@ -68,6 +92,7 @@ namespace SEPIEM
             }
             catch (Exception e)
             {
+                this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
 
             }
 
@@ -177,6 +202,9 @@ namespace SEPIEM
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
+            FirebaseResponse res = client.Get(@"contUsuarios");
+            int qtdUsuarios = int.Parse(res.ResultAs<string>());
+
             if (txtBI.Text == "" || txtNome.Text == "" || txtSobrenome.Text == "" || txtEmail.Text == "" || txtSenha.Text == "" ||
            txtBI.Text == "Bilhete de Identidade" || txtNome.Text == "Nome" || txtSobrenome.Text == "Sobrenome" || txtEmail.Text == "Email" || txtSenha.Text == "Senha")
             {
@@ -200,7 +228,11 @@ namespace SEPIEM
                     //   MessageBox.Show("Dados Inseridos com Sucesso !!!");
                     this.Alert("ÊXito no Cadastro", formAlert.enmType.Sucess);
 
+                    var set1 = client.Set(@"contEscolas", ++qtdUsuarios);
+
+                    totalUsuarios();
                     preencherTabelaUsuarios();
+                    limparCampos();
 
                 }
                 catch (Exception ex)
@@ -211,6 +243,16 @@ namespace SEPIEM
                 }
 
             }
+        }
+
+        private void limparCampos()
+        {
+            txtProcurarUsu.Clear();
+            txtNome.Clear();
+            txtSobrenome.Clear();
+            txtBI.Clear();
+            txtEmail.Clear();
+            txtSenha.Clear();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -309,6 +351,9 @@ namespace SEPIEM
 
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
+            FirebaseResponse res1 = client.Get(@"contUsuarios");
+            int qtdUsuarios = int.Parse(res1.ResultAs<string>());
+
             if (txtProcurarUsu.Text == "Informe o BI" || txtProcurarUsu.Text == "")
             {
                 this.Alert("Informe o BI, Por favor !!!", formAlert.enmType.Warnig);
@@ -323,6 +368,9 @@ namespace SEPIEM
                     this.Alert("Usuário Excluído com Êxito", formAlert.enmType.Sucess);
 
                     preencherTabelaUsuarios();
+                    var set1 = client.Set(@"contUsuarios", --qtdUsuarios);
+                    totalUsuarios();
+                    limparCampos();
 
                 }
                 catch (Exception ex)

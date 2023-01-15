@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FireSharp.Config;
-using FireSharp.Response;
 using FireSharp.Interfaces;
 using System.Net.NetworkInformation;
 
@@ -35,6 +34,7 @@ namespace SEPIEM
         };
 
         IFirebaseClient client;
+
         
 
         public void Alert(string msg, formAlert.enmType type )
@@ -63,6 +63,8 @@ namespace SEPIEM
 
         private  void btnMinimizar_Click(object sender, EventArgs e)
         {
+            FirebaseResponse res = client.Get(@"contEscolas");
+            int qtdEscolas = int.Parse(res.ResultAs<string>());
 
             if (txtDesignacao.Text == "Designação" || txtLat.Text == "Latitude" || txtLong.Text == "Longitude" || txtLocalizacao.Text == "Localização/Bairro"
                 || txtDescricao.Text == "Digite aquí sobre a escola a Descrição, Missão, Outros..." || imageBoxEscola == null 
@@ -86,10 +88,15 @@ namespace SEPIEM
 
                 try
                 {
+
                     var set2 = client.Set("Escolas/" + txtDesignacao.Text, escola);
                     //MessageBox.Show("Dados Inseridos com Sucesso !!!");
+                    var set1 = client.Set(@"contEscolas", ++qtdEscolas);
 
                     this.Alert("ÊXito no Cadastro", formAlert.enmType.Sucess);
+
+                    totalEscolas();
+                    limparCampos();
                 }
                 catch
                 {
@@ -103,7 +110,16 @@ namespace SEPIEM
             
         }
 
-
+        private void limparCampos()
+        {
+            txtProcurarEscola.Clear();
+            txtDesignacao.Clear();
+            txtLong.Clear();
+            txtLat.Clear();
+            txtLocalizacao.Clear();
+            txtDescricao.Clear();
+            imageBoxEscola.Image = null;
+        }
 
         private void frmEscolas_Load(object sender, EventArgs e)
         {
@@ -120,6 +136,8 @@ namespace SEPIEM
                
                 this.Alert("Sem Ligado à Internet ", formAlert.enmType.NotConnected);
             }
+
+            totalEscolas();
         }
 
       
@@ -177,7 +195,54 @@ namespace SEPIEM
 
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
-            this.Alert("Não disponível no momento", formAlert.enmType.Info);
+            FirebaseResponse res = client.Get(@"contEscolas");
+            int qtdEscolas = int.Parse(res.ResultAs<string>());
+
+            if (txtProcurarEscola.Text == "Pesquisar" || txtProcurarEscola.Text == "")
+            {
+                this.Alert("Informe a Escola, Por favor !!!", formAlert.enmType.Warnig);
+            }
+            else
+            {
+
+                try
+                {
+                    var res1 = client.Delete("Escolas/" + txtProcurarEscola.Text);
+                    var set1 = client.Set(@"contEscolas", --qtdEscolas);
+
+                    this.Alert("Escola Excluído com Êxito", formAlert.enmType.Sucess);                   
+
+                    
+                   // totalEscolas();
+                    limparCampos();
+
+                }
+                catch (Exception ex)
+                {
+                    this.Alert("Algo Correu Mal...\n ou Verifique a ligação à internet", formAlert.enmType.Error);
+                }
+
+            }
+            //this.Alert("Não disponível no momento", formAlert.enmType.Info);
+        }
+
+        private void totalEscolas()
+        {
+            try
+            {
+                // FirebaseResponse res1 = client.Get(@"contEscolas");
+                // int qtdEscolas = int.Parse(res1.ResultAs<string>());
+
+                //  lblTotalEscolas.Text = qtdEscolas.ToString();
+
+                
+
+            }
+            catch (Exception e)
+            {
+                this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
+            }
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

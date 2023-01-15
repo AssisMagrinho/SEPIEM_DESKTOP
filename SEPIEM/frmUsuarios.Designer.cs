@@ -35,6 +35,8 @@
             this.btnProcurarUsu = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lblTotalUsuarios = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -117,6 +119,8 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
+            this.panel6.Controls.Add(this.lblTotalUsuarios);
+            this.panel6.Controls.Add(this.lblTitle);
             this.panel6.Controls.Add(this.tableLayoutPanel4);
             this.panel6.Controls.Add(this.tableLayoutPanel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -125,6 +129,30 @@
             this.panel6.Size = new System.Drawing.Size(1184, 56);
             this.panel6.TabIndex = 14;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // lblTotalUsuarios
+            // 
+            this.lblTotalUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalUsuarios.AutoSize = true;
+            this.lblTotalUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalUsuarios.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTotalUsuarios.Location = new System.Drawing.Point(1059, 14);
+            this.lblTotalUsuarios.Name = "lblTotalUsuarios";
+            this.lblTotalUsuarios.Size = new System.Drawing.Size(93, 37);
+            this.lblTotalUsuarios.TabIndex = 17;
+            this.lblTotalUsuarios.Text = "####";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitle.Location = new System.Drawing.Point(949, 14);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(104, 37);
+            this.lblTitle.TabIndex = 16;
+            this.lblTitle.Text = "Total:";
             // 
             // tableLayoutPanel4
             // 
@@ -483,6 +511,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
@@ -524,5 +553,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblTotalUsuarios;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

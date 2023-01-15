@@ -53,8 +53,23 @@ namespace SEPIEM
             }
 
             preencherTabelaEscola();
+            totalEscolas();
 
 
+        }
+
+        private void totalEscolas()
+        {
+            try
+            {
+                int totalInscritos = int.Parse(dataGridView1.Rows.Count.ToString());
+                lblTotalEscolas.Text = totalInscritos.ToString();
+
+            }
+            catch (Exception e)
+            {
+                this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
+            }
         }
 
         private async void preencherTabelaEscola()
