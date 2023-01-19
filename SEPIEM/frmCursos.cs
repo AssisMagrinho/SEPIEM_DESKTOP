@@ -11,14 +11,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGV2Printer;
 
 namespace SEPIEM
 {
     public partial class frmCursos : Form
     {
-        public frmCursos()
+        public static string usuarioLogado;
+
+        public frmCursos(string nome)
         {
             InitializeComponent();
+            usuarioLogado = nome;
         }
 
         IFirebaseConfig fcon = new FirebaseConfig()
@@ -229,9 +233,26 @@ namespace SEPIEM
 
         private void button2_Click(object sender, EventArgs e)
         {
+            /*
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
             printPreviewDialog1.ShowDialog();
+            */
+
+            //Capturar Hora
+            string hora = DateTime.Now.ToShortTimeString();
+            //Capturar data
+            string data = DateTime.Now.ToShortDateString();
+
+
+            PrintDataGridView pr = new PrintDataGridView(dataGridView1);
+            pr.isRightToLeft = false;
+            pr.ReportFooter = "Usuário:" + usuarioLogado + " \t Relatório - CURSOS - SEPIEM - DATA :" + data + " " + hora;
+
+            pr.ReportHeader = "CURSOS CADASTRADOS - TOTAL :"+lblTotalCursos.Text;
+            pr.Print();
+
+
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

@@ -16,7 +16,7 @@ namespace SEPIEM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal("ASSIS MAGRINHO"));
+            Application.Run(new frmSplash());
         }
     }
 }

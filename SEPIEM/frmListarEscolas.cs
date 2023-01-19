@@ -11,14 +11,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGV2Printer;
 
 namespace SEPIEM
 {
     public partial class frmListarEscolas : Form
     {
-        public frmListarEscolas()
+        public static string usuarioLogado;
+        public frmListarEscolas(string nome)
         {
             InitializeComponent();
+
+            usuarioLogado = nome;
         }
 
         public void Alert(string msg, formAlert.enmType type)
@@ -131,6 +135,21 @@ namespace SEPIEM
             }
 
 
+        }
+
+        private void btnImprimirEscolas_Click(object sender, EventArgs e)
+        {
+            //Capturar Hora
+            string hora = DateTime.Now.ToShortTimeString();
+            //Capturar data
+            string data = DateTime.Now.ToShortDateString();
+
+
+            PrintDataGridView pr = new PrintDataGridView(dataGridView1);
+            pr.isRightToLeft = false;
+            pr.ReportFooter = "Usuário:" + usuarioLogado + " \t Relatório - ESCOLAS - SEPIEM - DATA :" + data + " " + hora;
+            pr.ReportHeader = "ESCOLAS CADASTRADAS - TOTAL :" + lblTotalEscolas.Text;
+            pr.Print();
         }
     }
 }

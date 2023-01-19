@@ -163,6 +163,16 @@ namespace SEPIEM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printUsu {
+            get {
+                object obj = ResourceManager.GetObject("printUsu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RemoveUsu00 {
             get {
                 object obj = ResourceManager.GetObject("RemoveUsu00", resourceCulture);

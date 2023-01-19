@@ -45,3 +45,8 @@ C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\obj\Debug\SEPIEM.cspro
 C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\obj\Debug\SEPIEM.exe
 C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\obj\Debug\SEPIEM.pdb
 C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\obj\Debug\SEPIEM.csprojResolveAssemblyReference.cache
+C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\bin\Debug\itextsharp.dll
+C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\bin\Debug\itextsharp.xml
+C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\bin\Debug\DGV.Utils.dll
+C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\bin\Debug\DGV2Printer.dll
+C:\Users\Assis F Magrinho\Desktop\SEPIEM C#\SEPIEM\SEPIEM\bin\Debug\DGV2Printer.pdb

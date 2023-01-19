@@ -11,14 +11,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGV2Printer;
+
 
 namespace SEPIEM
 {
+   
+
     public partial class frmUsuarios : Form
     {
-        public frmUsuarios()
+        public static string usuarioLogado;
+        public frmUsuarios(string nome)
         {
             InitializeComponent();
+
+            usuarioLogado = nome;
+
+            
 
         }
 
@@ -68,13 +77,15 @@ namespace SEPIEM
 
                  //lblTotalUsuarios.Text = qtdUsuarios.ToString();
 
-                int totalUsuarios = int.Parse(dataGridView1.Rows.Count.ToString())-1;
+                int totalUsuarios = int.Parse(dataGridView1.Rows.Count.ToString());
                  lblTotalUsuarios.Text = totalUsuarios.ToString();
 
             }
             catch (Exception e)
             {
-                this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
+                
+              this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
+
             }
 
         }
@@ -460,6 +471,21 @@ namespace SEPIEM
 
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Capturar Hora
+            string hora = DateTime.Now.ToShortTimeString();
+            //Capturar data
+            string data = DateTime.Now.ToShortDateString();
+
+
+            PrintDataGridView pr = new PrintDataGridView(dataGridView1);
+            pr.isRightToLeft = false;
+            pr.ReportFooter = "Usuário:"+ usuarioLogado+" \t Relatório - USUÁRIOS - SEPIEM - DATA :" + data+" "+hora;
+            pr.ReportHeader = "USUÁRIOS CADASTRADOS - TOTAL :" + lblTotalUsuarios.Text;
+            pr.Print();
         }
     }
 }

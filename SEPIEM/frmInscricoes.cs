@@ -12,14 +12,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGV2Printer;
 
 namespace SEPIEM
 {
     public partial class frmInscricoes : Form
     {
-        public frmInscricoes()
+        public static string usuarioLogado;
+
+        public frmInscricoes(string nome)
         {
             InitializeComponent();
+
+            usuarioLogado = nome;
         }
 
         IFirebaseConfig fcon = new FirebaseConfig()
@@ -64,7 +69,7 @@ namespace SEPIEM
         {
             try
             {
-                int totalInscritos = int.Parse(dataGridView1.Rows.Count.ToString())-1;
+                int totalInscritos = int.Parse(dataGridView1.Rows.Count.ToString());
                 lblTotalInscritos.Text = totalInscritos.ToString();
 
                 
@@ -73,6 +78,7 @@ namespace SEPIEM
             catch (Exception e)
             {
                 this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
+            
             }
         }
 
@@ -91,7 +97,7 @@ namespace SEPIEM
             }
             catch(Exception e)
             {
-               MessageBox.Show(e.ToString());
+              // MessageBox.Show(e.ToString());
                 this.Alert("Não foi possível carregar as informações...\n Verifique a ligação à internet", formAlert.enmType.Error);
             }
 
@@ -101,7 +107,7 @@ namespace SEPIEM
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
-          //  dataGridView1.DefaultCellStyle.BackColor = Color.LightBlue;
+         //   dataGridView1.DefaultCellStyle.BackColor = Color.LightSlateGray;
 
 
             dataGridView1.ForeColor = Color.Black;
@@ -136,7 +142,7 @@ namespace SEPIEM
 
 
 
-            columnHeaderStyle.BackColor = Color.DarkBlue;
+            columnHeaderStyle.BackColor = Color.LightSlateGray;
 
             columnHeaderStyle.Font = new Font("Verdana", 10, FontStyle.Bold);
 
@@ -430,6 +436,7 @@ namespace SEPIEM
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 System.Diagnostics.Process.Start("https://newsepiem-default-rtdb.firebaseio.com/");
@@ -439,7 +446,8 @@ namespace SEPIEM
                 this.Alert("Algo Correu Mal...\n ou Verifique a ligação à internet", formAlert.enmType.Error);
 
             }
-
+            
+            
         }
 
         private void txtLinkDoc_TextChanged(object sender, EventArgs e)
@@ -461,6 +469,22 @@ namespace SEPIEM
 
         private void lblTotalInscritos_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //Capturar Hora
+            string hora = DateTime.Now.ToShortTimeString();
+            //Capturar data
+            string data = DateTime.Now.ToShortDateString();
+
+
+            PrintDataGridView pr = new PrintDataGridView(dataGridView1);
+            pr.isRightToLeft = false;
+            pr.ReportFooter = "Usuário:" + usuarioLogado + " \t Relatório - INSCRITOS - SEPIEM - DATA :" + data + " " + hora;
+            pr.ReportHeader = "INSCRITOS CADASTRADOS - TOTAL :" + lblTotalInscritos.Text;
+            pr.Print();
+
         }
     }
 }

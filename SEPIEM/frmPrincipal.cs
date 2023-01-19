@@ -144,26 +144,29 @@ namespace SEPIEM
 
                 this.Alert("Sem Ligado à Internet ", formAlert.enmType.NotConnected);
             }
+            
+            string Date = DateTime.Today.ToString("D");
+            lblData.Text = Date;
         }
 
         private void btnUusuarios_Click(object sender, EventArgs e)
         { 
-            OpenChildForm(new frmUsuarios(), sender);
+            OpenChildForm(new frmUsuarios(usuarioLogado), sender);
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmCursos(), sender);
+            OpenChildForm(new frmCursos(usuarioLogado), sender);
         }
 
         private void btnEscolas_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmEscolas(), sender);
+            OpenChildForm(new frmEscolas(usuarioLogado), sender);
         }
 
         private void btnInscritos_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmInscricoes(), sender);
+            OpenChildForm(new frmInscricoes(usuarioLogado), sender);
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)

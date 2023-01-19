@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListarEscolas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListarEscolas));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnProcurarEscola = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lblTotalEscolas = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,8 +43,8 @@
             this.txtProcurarEscola = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblTotalEscolas = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnImprimirEscolas = new System.Windows.Forms.Button();
+            this.btnProcurarEscola = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -54,6 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
+            this.panel1.Controls.Add(this.btnImprimirEscolas);
             this.panel1.Controls.Add(this.btnProcurarEscola);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel4);
@@ -63,22 +65,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1418, 154);
             this.panel1.TabIndex = 7;
-            // 
-            // btnProcurarEscola
-            // 
-            this.btnProcurarEscola.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProcurarEscola.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
-            this.btnProcurarEscola.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProcurarEscola.FlatAppearance.BorderSize = 0;
-            this.btnProcurarEscola.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
-            this.btnProcurarEscola.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
-            this.btnProcurarEscola.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcurarEscola.Image = ((System.Drawing.Image)(resources.GetObject("btnProcurarEscola.Image")));
-            this.btnProcurarEscola.Location = new System.Drawing.Point(301, 89);
-            this.btnProcurarEscola.Name = "btnProcurarEscola";
-            this.btnProcurarEscola.Size = new System.Drawing.Size(55, 42);
-            this.btnProcurarEscola.TabIndex = 0;
-            this.btnProcurarEscola.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -104,6 +90,30 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1418, 56);
             this.panel6.TabIndex = 14;
+            // 
+            // lblTotalEscolas
+            // 
+            this.lblTotalEscolas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotalEscolas.AutoSize = true;
+            this.lblTotalEscolas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalEscolas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTotalEscolas.Location = new System.Drawing.Point(1280, 9);
+            this.lblTotalEscolas.Name = "lblTotalEscolas";
+            this.lblTotalEscolas.Size = new System.Drawing.Size(93, 37);
+            this.lblTotalEscolas.TabIndex = 17;
+            this.lblTotalEscolas.Text = "####";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitle.Location = new System.Drawing.Point(1170, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(104, 37);
+            this.lblTitle.TabIndex = 16;
+            this.lblTitle.Text = "Total:";
             // 
             // tableLayoutPanel4
             // 
@@ -216,29 +226,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(1412, 497);
             this.dataGridView1.TabIndex = 1;
             // 
-            // lblTotalEscolas
+            // btnImprimirEscolas
             // 
-            this.lblTotalEscolas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTotalEscolas.AutoSize = true;
-            this.lblTotalEscolas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEscolas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTotalEscolas.Location = new System.Drawing.Point(1280, 9);
-            this.lblTotalEscolas.Name = "lblTotalEscolas";
-            this.lblTotalEscolas.Size = new System.Drawing.Size(93, 37);
-            this.lblTotalEscolas.TabIndex = 17;
-            this.lblTotalEscolas.Text = "####";
+            this.btnImprimirEscolas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImprimirEscolas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimirEscolas.FlatAppearance.BorderSize = 0;
+            this.btnImprimirEscolas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirEscolas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirEscolas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnImprimirEscolas.Image = global::SEPIEM.Properties.Resources.printUsu;
+            this.btnImprimirEscolas.Location = new System.Drawing.Point(1240, 89);
+            this.btnImprimirEscolas.Name = "btnImprimirEscolas";
+            this.btnImprimirEscolas.Size = new System.Drawing.Size(65, 45);
+            this.btnImprimirEscolas.TabIndex = 13;
+            this.btnImprimirEscolas.UseVisualStyleBackColor = true;
+            this.btnImprimirEscolas.Click += new System.EventHandler(this.btnImprimirEscolas_Click);
             // 
-            // lblTitle
+            // btnProcurarEscola
             // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitle.Location = new System.Drawing.Point(1170, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(104, 37);
-            this.lblTitle.TabIndex = 16;
-            this.lblTitle.Text = "Total:";
+            this.btnProcurarEscola.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnProcurarEscola.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
+            this.btnProcurarEscola.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProcurarEscola.FlatAppearance.BorderSize = 0;
+            this.btnProcurarEscola.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
+            this.btnProcurarEscola.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
+            this.btnProcurarEscola.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcurarEscola.Image = ((System.Drawing.Image)(resources.GetObject("btnProcurarEscola.Image")));
+            this.btnProcurarEscola.Location = new System.Drawing.Point(301, 89);
+            this.btnProcurarEscola.Name = "btnProcurarEscola";
+            this.btnProcurarEscola.Size = new System.Drawing.Size(55, 42);
+            this.btnProcurarEscola.TabIndex = 0;
+            this.btnProcurarEscola.UseVisualStyleBackColor = false;
             // 
             // frmListarEscolas
             // 
@@ -278,5 +296,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblTotalEscolas;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnImprimirEscolas;
     }
 }

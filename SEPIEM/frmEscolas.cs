@@ -19,9 +19,11 @@ namespace SEPIEM
 {
     public partial class frmEscolas : Form
     {
-        public frmEscolas()
+        public static string usuarioLogado;
+        public frmEscolas(string nome)
         {
             InitializeComponent();
+            usuarioLogado = nome;
         }
 
         
@@ -283,7 +285,7 @@ namespace SEPIEM
         private void button2_Click(object sender, EventArgs e)
         {
 
-            frmListarEscolas escola = new frmListarEscolas();
+            frmListarEscolas escola = new frmListarEscolas(usuarioLogado);
 
             escola.Show();
 

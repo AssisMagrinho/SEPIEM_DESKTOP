@@ -170,7 +170,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Image = global::SEPIEM.Properties.Resources.list_32px;
+            this.button2.Image = global::SEPIEM.Properties.Resources.printUsu;
             this.button2.Location = new System.Drawing.Point(879, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(65, 45);

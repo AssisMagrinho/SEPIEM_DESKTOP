@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInscricoes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEscola = new System.Windows.Forms.TextBox();
@@ -46,6 +46,7 @@
             this.txtApelido1 = new System.Windows.Forms.TextBox();
             this.txtNomeProprio = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnImprimirInscricoes = new System.Windows.Forms.Button();
             this.lblLinkConvert = new System.Windows.Forms.LinkLabel();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -325,6 +326,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
+            this.panel5.Controls.Add(this.btnImprimirInscricoes);
             this.panel5.Controls.Add(this.lblLinkConvert);
             this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.tableLayoutPanel5);
@@ -336,6 +338,22 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1418, 60);
             this.panel5.TabIndex = 6;
+            // 
+            // btnImprimirInscricoes
+            // 
+            this.btnImprimirInscricoes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImprimirInscricoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimirInscricoes.FlatAppearance.BorderSize = 0;
+            this.btnImprimirInscricoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirInscricoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirInscricoes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnImprimirInscricoes.Image = global::SEPIEM.Properties.Resources.printUsu;
+            this.btnImprimirInscricoes.Location = new System.Drawing.Point(839, 0);
+            this.btnImprimirInscricoes.Name = "btnImprimirInscricoes";
+            this.btnImprimirInscricoes.Size = new System.Drawing.Size(65, 45);
+            this.btnImprimirInscricoes.TabIndex = 17;
+            this.btnImprimirInscricoes.UseVisualStyleBackColor = true;
+            this.btnImprimirInscricoes.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // lblLinkConvert
             // 
@@ -438,12 +456,15 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(71)))));
@@ -681,5 +702,6 @@
         private System.Windows.Forms.LinkLabel lblLinkConvert;
         private System.Windows.Forms.Label lblTotalInscritos;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnImprimirInscricoes;
     }
 }

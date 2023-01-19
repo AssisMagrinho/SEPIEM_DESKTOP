@@ -43,9 +43,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtProcurarUsu = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -55,9 +52,12 @@
             this.txtSobrenome = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnImprimirUsuarios = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -228,56 +228,6 @@
             this.txtProcurarUsu.Click += new System.EventHandler(this.txtProcurarUsu_Click);
             this.txtProcurarUsu.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(751, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 45);
-            this.button2.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.button2, "Imprimir");
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(564, 3);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(65, 45);
-            this.btnMaximizar.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.btnMaximizar, "Remover");
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(659, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(65, 45);
-            this.btnClose.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btnClose, "Actualizar");
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -410,7 +360,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.btnImprimirUsuarios);
             this.panel5.Controls.Add(this.tableLayoutPanel5);
             this.panel5.Controls.Add(this.tableLayoutPanel6);
             this.panel5.Controls.Add(this.btnMaximizar);
@@ -421,6 +371,23 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1184, 60);
             this.panel5.TabIndex = 6;
+            // 
+            // btnImprimirUsuarios
+            // 
+            this.btnImprimirUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnImprimirUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimirUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnImprimirUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirUsuarios.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnImprimirUsuarios.Image = global::SEPIEM.Properties.Resources.printUsu;
+            this.btnImprimirUsuarios.Location = new System.Drawing.Point(751, 0);
+            this.btnImprimirUsuarios.Name = "btnImprimirUsuarios";
+            this.btnImprimirUsuarios.Size = new System.Drawing.Size(65, 45);
+            this.btnImprimirUsuarios.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.btnImprimirUsuarios, "Imprimir");
+            this.btnImprimirUsuarios.UseVisualStyleBackColor = true;
+            this.btnImprimirUsuarios.Click += new System.EventHandler(this.button2_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -446,6 +413,23 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(1450, 65);
             this.tableLayoutPanel6.TabIndex = 6;
             // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
+            this.btnMaximizar.Location = new System.Drawing.Point(564, 3);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(65, 45);
+            this.btnMaximizar.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.btnMaximizar, "Remover");
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
             // btnMinimizar
             // 
             this.btnMinimizar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -462,6 +446,23 @@
             this.toolTip1.SetToolTip(this.btnMinimizar, "Adicionar");
             this.btnMinimizar.UseVisualStyleBackColor = true;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(659, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(65, 45);
+            this.btnClose.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.btnClose, "Actualizar");
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -535,7 +536,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnImprimirUsuarios;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
