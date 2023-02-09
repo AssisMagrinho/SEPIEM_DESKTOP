@@ -147,9 +147,8 @@ namespace SEPIEM
       void conteudoTabela(Dictionary<string, Cursos> record)
         {
             dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Clear();         
             
-
             dataGridView1.ForeColor = Color.Black;
 
             
@@ -159,23 +158,21 @@ namespace SEPIEM
 
             dataGridView1.Columns[0].Width = 510;
             dataGridView1.Columns[1].Width = 510;
-            
-            
 
-            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
 
-           
+
+           //  DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();        
 
             
 
-            columnHeaderStyle.BackColor = Color.DarkBlue;           
+        //    columnHeaderStyle.BackColor = Color.DarkBlue;           
 
-            columnHeaderStyle.Font = new Font("Verdana", 10, FontStyle.Bold);
+          // columnHeaderStyle.Font = new Font("Verdana", 10, FontStyle.Bold);
 
-            columnHeaderStyle.Padding = new Padding(10, 10, 10, 10);
+         //   columnHeaderStyle.Padding = new Padding(10, 10, 10, 10);
 
 
-            dataGridView1.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+         //   dataGridView1.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
            
 
@@ -295,11 +292,22 @@ namespace SEPIEM
 
                 try
                 {
-                    var set = client.Update("Cursos/" + txtPesquisarCurso.Text, curso);
-                    // MessageBox.Show("Dados Inseridos com Sucesso !!!");
-                    this.Alert("ÊXito na Actualização", formAlert.enmType.Sucess);
+                    DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA ACTUALIZAR OS DADOS DESTE CURSO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (obj == DialogResult.Yes)
+                    {
+                        var set = client.Update("Cursos/" + txtPesquisarCurso.Text, curso);
+                        // MessageBox.Show("Dados Inseridos com Sucesso !!!");
+                        this.Alert("ÊXito na Actualização", formAlert.enmType.Sucess);
 
-                    preencherTabelaEscola();
+                        preencherTabelaEscola();
+                    }
+                    else if (obj == DialogResult.No)
+                    {
+                        e.ToString();
+
+                    }
+
+                   
                 }
                 catch
                 {
@@ -364,14 +372,25 @@ namespace SEPIEM
 
                 try
                 {
-                    var res1 = client.Delete("Cursos/" + txtPesquisarCurso.Text);
-                    var set1 = client.Set(@"ContCursos", --qtdCursos);
+                    DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA EXCLUIR ESTE CURSO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    if (obj == DialogResult.Yes)
+                    {
+                        var res1 = client.Delete("Cursos/" + txtPesquisarCurso.Text);
+                        var set1 = client.Set(@"ContCursos", --qtdCursos);
 
-                    this.Alert("Curso Excluído com Êxito", formAlert.enmType.Sucess);
+                        this.Alert("Curso Excluído com Êxito", formAlert.enmType.Sucess);
 
-                    preencherTabelaEscola();
-                    totalCursos();
+                        preencherTabelaEscola();
+                        totalCursos();
 
+
+                    }
+                    else if (obj == DialogResult.No)
+                    {
+                        e.ToString();
+
+                    }
+                   
                 }
                 catch (Exception ex)
                 {

@@ -30,10 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnInscritos = new System.Windows.Forms.Button();
-            this.btnCursos = new System.Windows.Forms.Button();
-            this.btnEscolas = new System.Windows.Forms.Button();
-            this.btnUusuarios = new System.Windows.Forms.Button();
+            this.lblData = new System.Windows.Forms.Label();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblCurUsu = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,10 +43,15 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.lblData = new System.Windows.Forms.Label();
+            this.btnInscritos = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
+            this.btnEscolas = new System.Windows.Forms.Button();
+            this.btnUusuarios = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
+            this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -67,85 +69,17 @@
             this.panelMenu.Size = new System.Drawing.Size(290, 944);
             this.panelMenu.TabIndex = 0;
             // 
-            // btnInscritos
+            // lblData
             // 
-            this.btnInscritos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInscritos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInscritos.FlatAppearance.BorderSize = 0;
-            this.btnInscritos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInscritos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInscritos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnInscritos.Image = ((System.Drawing.Image)(resources.GetObject("btnInscritos.Image")));
-            this.btnInscritos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInscritos.Location = new System.Drawing.Point(0, 342);
-            this.btnInscritos.Name = "btnInscritos";
-            this.btnInscritos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnInscritos.Size = new System.Drawing.Size(290, 80);
-            this.btnInscritos.TabIndex = 5;
-            this.btnInscritos.Text = "Inscrições";
-            this.btnInscritos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInscritos.UseVisualStyleBackColor = true;
-            this.btnInscritos.Click += new System.EventHandler(this.btnInscritos_Click);
-            // 
-            // btnCursos
-            // 
-            this.btnCursos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCursos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCursos.FlatAppearance.BorderSize = 0;
-            this.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCursos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnCursos.Image")));
-            this.btnCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCursos.Location = new System.Drawing.Point(0, 262);
-            this.btnCursos.Name = "btnCursos";
-            this.btnCursos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnCursos.Size = new System.Drawing.Size(290, 80);
-            this.btnCursos.TabIndex = 4;
-            this.btnCursos.Text = " Cursos";
-            this.btnCursos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCursos.UseVisualStyleBackColor = true;
-            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
-            // 
-            // btnEscolas
-            // 
-            this.btnEscolas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEscolas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEscolas.FlatAppearance.BorderSize = 0;
-            this.btnEscolas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEscolas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEscolas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnEscolas.Image = ((System.Drawing.Image)(resources.GetObject("btnEscolas.Image")));
-            this.btnEscolas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEscolas.Location = new System.Drawing.Point(0, 182);
-            this.btnEscolas.Name = "btnEscolas";
-            this.btnEscolas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnEscolas.Size = new System.Drawing.Size(290, 80);
-            this.btnEscolas.TabIndex = 3;
-            this.btnEscolas.Text = " Escolas";
-            this.btnEscolas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEscolas.UseVisualStyleBackColor = true;
-            this.btnEscolas.Click += new System.EventHandler(this.btnEscolas_Click);
-            // 
-            // btnUusuarios
-            // 
-            this.btnUusuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUusuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUusuarios.FlatAppearance.BorderSize = 0;
-            this.btnUusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUusuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUusuarios.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUusuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUusuarios.Image")));
-            this.btnUusuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUusuarios.Location = new System.Drawing.Point(0, 102);
-            this.btnUusuarios.Name = "btnUusuarios";
-            this.btnUusuarios.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnUusuarios.Size = new System.Drawing.Size(290, 80);
-            this.btnUusuarios.TabIndex = 2;
-            this.btnUusuarios.Text = " Usuários";
-            this.btnUusuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUusuarios.UseVisualStyleBackColor = true;
-            this.btnUusuarios.Click += new System.EventHandler(this.btnUusuarios_Click);
+            this.lblData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblData.Location = new System.Drawing.Point(3, 917);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(108, 18);
+            this.lblData.TabIndex = 2;
+            this.lblData.Text = "dd/MM/YYYY";
             // 
             // panelLogo
             // 
@@ -300,8 +234,8 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(58)))), ((int)(((byte)(96)))));
-            this.panelDesktop.BackgroundImage = global::SEPIEM.Properties.Resources.MainBackground;
             this.panelDesktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelDesktop.Controls.Add(this.label3);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(290, 102);
             this.panelDesktop.Name = "panelDesktop";
@@ -309,17 +243,97 @@
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
-            // lblData
+            // btnInscritos
             // 
-            this.lblData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblData.Location = new System.Drawing.Point(3, 917);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(108, 18);
-            this.lblData.TabIndex = 2;
-            this.lblData.Text = "dd/MM/YYYY";
+            this.btnInscritos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInscritos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInscritos.FlatAppearance.BorderSize = 0;
+            this.btnInscritos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscritos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscritos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnInscritos.Image = ((System.Drawing.Image)(resources.GetObject("btnInscritos.Image")));
+            this.btnInscritos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInscritos.Location = new System.Drawing.Point(0, 342);
+            this.btnInscritos.Name = "btnInscritos";
+            this.btnInscritos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnInscritos.Size = new System.Drawing.Size(290, 80);
+            this.btnInscritos.TabIndex = 5;
+            this.btnInscritos.Text = "Inscrições";
+            this.btnInscritos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInscritos.UseVisualStyleBackColor = true;
+            this.btnInscritos.Click += new System.EventHandler(this.btnInscritos_Click);
+            // 
+            // btnCursos
+            // 
+            this.btnCursos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCursos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCursos.FlatAppearance.BorderSize = 0;
+            this.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnCursos.Image")));
+            this.btnCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCursos.Location = new System.Drawing.Point(0, 262);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnCursos.Size = new System.Drawing.Size(290, 80);
+            this.btnCursos.TabIndex = 4;
+            this.btnCursos.Text = " Cursos";
+            this.btnCursos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            // 
+            // btnEscolas
+            // 
+            this.btnEscolas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEscolas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEscolas.FlatAppearance.BorderSize = 0;
+            this.btnEscolas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEscolas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEscolas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEscolas.Image = ((System.Drawing.Image)(resources.GetObject("btnEscolas.Image")));
+            this.btnEscolas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEscolas.Location = new System.Drawing.Point(0, 182);
+            this.btnEscolas.Name = "btnEscolas";
+            this.btnEscolas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnEscolas.Size = new System.Drawing.Size(290, 80);
+            this.btnEscolas.TabIndex = 3;
+            this.btnEscolas.Text = " Escolas";
+            this.btnEscolas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEscolas.UseVisualStyleBackColor = true;
+            this.btnEscolas.Click += new System.EventHandler(this.btnEscolas_Click);
+            // 
+            // btnUusuarios
+            // 
+            this.btnUusuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUusuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUusuarios.FlatAppearance.BorderSize = 0;
+            this.btnUusuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUusuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUusuarios.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUusuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUusuarios.Image")));
+            this.btnUusuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUusuarios.Location = new System.Drawing.Point(0, 102);
+            this.btnUusuarios.Name = "btnUusuarios";
+            this.btnUusuarios.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnUusuarios.Size = new System.Drawing.Size(290, 80);
+            this.btnUusuarios.TabIndex = 2;
+            this.btnUusuarios.Text = " Usuários";
+            this.btnUusuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUusuarios.UseVisualStyleBackColor = true;
+            this.btnUusuarios.Click += new System.EventHandler(this.btnUusuarios_Click);
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Image = global::SEPIEM.Properties.Resources.guadix;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1292, 842);
+            this.label3.TabIndex = 1;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // frmPrincipal
             // 
@@ -344,6 +358,7 @@
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            this.panelDesktop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -368,5 +383,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCurUsu;
         private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -77,7 +77,7 @@ namespace SEPIEM
 
                  //lblTotalUsuarios.Text = qtdUsuarios.ToString();
 
-                int totalUsuarios = int.Parse(dataGridView1.Rows.Count.ToString());
+                int totalUsuarios = int.Parse(dataGridView1.Rows.Count.ToString())-1;
                  lblTotalUsuarios.Text = totalUsuarios.ToString();
 
             }
@@ -374,17 +374,27 @@ namespace SEPIEM
 
                 try
                 {
-                    var res = client.Delete("Usuarios/" + txtProcurarUsu.Text);
+                    DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA EXCLUIR ESTE USUÁRIO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    if (obj == DialogResult.Yes)
+                    {
+                        var res = client.Delete("Usuarios/" + txtProcurarUsu.Text);
 
-                    this.Alert("Usuário Excluído com Êxito", formAlert.enmType.Sucess);
+                        this.Alert("Usuário Excluído com Êxito", formAlert.enmType.Sucess);
 
-                    preencherTabelaUsuarios();
-                    var set1 = client.Set(@"contUsuarios", --qtdUsuarios);
-                    totalUsuarios();
-                    limparCampos();
+                        preencherTabelaUsuarios();
+                        var set1 = client.Set(@"contUsuarios", --qtdUsuarios);
+                        totalUsuarios();
+                        limparCampos();
+                    }
+                    else if (obj == DialogResult.No)
+                    {
+                        e.ToString();
+
+                    }
+                   
 
                 }
-                catch (Exception ex)
+                catch
                 {
                     this.Alert("Algo Correu Mal...\n ou Verifique a ligação à internet", formAlert.enmType.Error);
                 }
@@ -416,11 +426,21 @@ namespace SEPIEM
 
                 try
                 {
-                    var set = client.Update("Usuarios/" + txtBI.Text, usuarios);
-                    // MessageBox.Show("Dados Inseridos com Sucesso !!!");
-                    this.Alert("ÊXito na Actualização", formAlert.enmType.Sucess);
+                    DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA ACTUALIZAR OS DADOS DESTE USUÁRIO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (obj == DialogResult.Yes)
+                    {
+                        var set = client.Update("Usuarios/" + txtBI.Text, usuarios);
+                        // MessageBox.Show("Dados Inseridos com Sucesso !!!");
+                        this.Alert("ÊXito na Actualização", formAlert.enmType.Sucess);
 
-                    preencherTabelaUsuarios();
+                        preencherTabelaUsuarios();
+                    }
+                    else if (obj == DialogResult.No)
+                    {
+                        e.ToString();
+
+                    }
+                   
                 }
                 catch
                 {

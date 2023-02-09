@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 
 
@@ -17,12 +18,17 @@ namespace SEPIEM
 {
     public partial class frmLogin : Form
     {
-        public static string usuarioLogado;
+        public static string usuarioLogado;     
 
         public frmLogin()
         {
             InitializeComponent();
+            
         }
+
+       
+
+    
         IFirebaseConfig fcon = new FirebaseConfig()
         {
             AuthSecret = "YWyipBmZ7YgkVUp2W6ukKuYvGgBpRujnqcCEveeL",
@@ -86,7 +92,6 @@ namespace SEPIEM
             if (registrar.Left <= 525)
             {
                 timer2.Stop();
-
                 this.Close();
 
             }
@@ -109,6 +114,8 @@ namespace SEPIEM
 
         private void button1_Click(object sender, EventArgs e)
         {
+                                    
+
 
             if (txtBI.Text == "" || txtSenha.Text == "" ||
                 txtBI.Text == "Bilhete de Identidade" || txtSenha.Text == "Senha")
@@ -124,15 +131,18 @@ namespace SEPIEM
                     Usuarios ResUsu = res.ResultAs<Usuarios>();
 
                     usuarioLogado = ResUsu.nome + " " + ResUsu.sobrenome;
+                   
+                   
 
                     Usuarios CurUsu = new Usuarios()
-                    {
-
+                    {                    
                         BI = txtBI.Text,
                         senha = txtSenha.Text
                     };
+
                     
-                    if(Usuarios.IsEqual(ResUsu, CurUsu))
+
+                    if (Usuarios.IsEqual(ResUsu, CurUsu))
                     {
                         frmPrincipal principal = new frmPrincipal(usuarioLogado);
                         principal.Show();                        
@@ -143,8 +153,6 @@ namespace SEPIEM
                     {
                         this.Alert(Usuarios.error, formAlert.enmType.Error);
                     }
-
-
 
                 }
                 catch (Exception ex)

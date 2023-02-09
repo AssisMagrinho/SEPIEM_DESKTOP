@@ -123,6 +123,16 @@ namespace SEPIEM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap guadix {
+            get {
+                object obj = ResourceManager.GetObject("guadix", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap informacao {
             get {
                 object obj = ResourceManager.GetObject("informacao", resourceCulture);

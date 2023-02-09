@@ -209,17 +209,27 @@ namespace SEPIEM
 
                 try
                 {
-                    var res1 = client.Delete("Escolas/" + txtProcurarEscola.Text);
-                    var set1 = client.Set(@"contEscolas", --qtdEscolas);
+                    DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA EXCLUIR ESTA ESCOLA?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    if (obj == DialogResult.Yes)
+                    {
+                        var res1 = client.Delete("Escolas/" + txtProcurarEscola.Text);
+                        var set1 = client.Set(@"contEscolas", --qtdEscolas);
 
-                    this.Alert("Escola Excluído com Êxito", formAlert.enmType.Sucess);                   
+                        this.Alert("Escola Excluído com Êxito", formAlert.enmType.Sucess);
 
-                    
-                   // totalEscolas();
-                    limparCampos();
 
+                        // totalEscolas();
+                        limparCampos();
+
+                    }
+                    else if (obj == DialogResult.No)
+                    {
+                        e.ToString();
+
+                    }
+                   
                 }
-                catch (Exception ex)
+                catch
                 {
                     this.Alert("Algo Correu Mal...\n ou Verifique a ligação à internet", formAlert.enmType.Error);
                 }
@@ -270,10 +280,22 @@ namespace SEPIEM
 
                 try
                 {
-                    var set2 = client.Update("Escolas/" + txtProcurarEscola.Text, escola);
-                    //MessageBox.Show("Dados Inseridos com Sucesso !!!");
+                    DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA ACTUALIZAR OS DADOS DESTA ESCOLA?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (obj == DialogResult.Yes)
+                    {
+                        var set2 = client.Update("Escolas/" + txtProcurarEscola.Text, escola);
+                        //MessageBox.Show("Dados Inseridos com Sucesso !!!");
 
-                    this.Alert("ÊXito na Atualização", formAlert.enmType.Sucess);
+                        this.Alert("ÊXito na Atualização", formAlert.enmType.Sucess);
+
+                    }
+                    else if (obj == DialogResult.No)
+                    {
+                        e.ToString();
+
+                    }
+
+                   
                 }
                 catch
                 {

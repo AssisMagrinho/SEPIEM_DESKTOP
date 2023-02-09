@@ -367,13 +367,23 @@ namespace SEPIEM
 
                 try
                 {
-                    var set = client.Update("Inscritos/" + txtProcurarIns.Text, inscritos);
-                    
+                    DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA ACTUALIZAR OS DADOS DESTE INSCRITO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (obj == DialogResult.Yes)
+                    {
+                        var set = client.Update("Inscritos/" + txtProcurarIns.Text, inscritos);
 
-                    // MessageBox.Show("Dados Inseridos com Sucesso !!!");
-                    this.Alert("ÊXito na Actualização", formAlert.enmType.Sucess);
 
-                    preencherTabelaInscritos();
+                        // MessageBox.Show("Dados Inseridos com Sucesso !!!");
+                        this.Alert("ÊXito na Actualização", formAlert.enmType.Sucess);
+
+                        preencherTabelaInscritos();
+                    }
+                    else if (obj == DialogResult.No)
+                    {
+                        e.ToString();
+
+                    }
+                   
                 }
                 catch
                 {
@@ -396,16 +406,28 @@ namespace SEPIEM
 
                 try
                 {
-                    var res = client.Delete("Inscritos/" + txtProcurarIns.Text);
+                    DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA EXCLUIR ESTE INSCRITO?", "ATENÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    if (obj == DialogResult.Yes)
+                    {
+                        var res = client.Delete("Inscritos/" + txtProcurarIns.Text);
 
-                   // var set1 = client.Set(@"contInscritos", --qtdInscritos);
+                        // var set1 = client.Set(@"contInscritos", --qtdInscritos);
 
-                    this.Alert("Inscrito Excluído com Êxito", formAlert.enmType.Sucess);
+                        this.Alert("Inscrito Excluído com Êxito", formAlert.enmType.Sucess);
 
-                    preencherTabelaInscritos();
-                    totalInscritos();
-                    limparCampos();
+                        preencherTabelaInscritos();
+                        totalInscritos();
+                        limparCampos();
 
+
+
+                    }
+                    else if (obj == DialogResult.No)
+                    {
+                        e.ToString();
+
+                    }
+                   
                 }
                 catch (Exception ex)
                 {

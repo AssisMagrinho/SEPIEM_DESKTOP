@@ -195,7 +195,16 @@ namespace SEPIEM
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult obj = MessageBox.Show("TEM CERTEZA QUE DESEJA SAIR?", "ATENÇÃO",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (obj == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (obj == DialogResult.No)
+            {
+                e.ToString();
+                
+            }
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)

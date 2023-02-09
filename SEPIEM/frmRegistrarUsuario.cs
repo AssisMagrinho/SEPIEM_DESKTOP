@@ -10,16 +10,23 @@ using System.Windows.Forms;
 using FireSharp.Config;
 using FireSharp.Response;
 using FireSharp.Interfaces;
+using System.Security.Cryptography;
 
 namespace SEPIEM
 {
     public partial class frmRegistrarUsuario : Form
     {
+     
         public frmRegistrarUsuario()
         {
             InitializeComponent();
+
  
         }
+
+     
+
+  
 
         IFirebaseConfig fcon = new FirebaseConfig()
         {
@@ -51,6 +58,10 @@ namespace SEPIEM
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+        
+
+            
+
 
             if (txtBI.Text ==""|| txtNome.Text == "" || txtSobrenome.Text == "" || txtEmail.Text == "" || txtSenha.Text == "" ||
            txtBI.Text == "Bilhete de Identidade" || txtNome.Text == "Nome" || txtSobrenome.Text == "Sobrenome" || txtEmail.Text == "Email" || txtSenha.Text == "Senha")
